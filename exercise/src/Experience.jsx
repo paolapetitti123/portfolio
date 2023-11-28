@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import Astronaut from "./Astronaut";
 import Galaxy from "./Galaxy"
 import { Bloom, DepthOfField, EffectComposer } from "@react-three/postprocessing";
@@ -11,9 +11,9 @@ import { PlanetOne  } from "./PlanetOne";
 import { PlanetTwo  } from "./PlanetTwo";
 import { PlanetThree  } from "./PlanetThree";
 import { PlanetFour  } from "./PlanetFour";
-import { useControls, button } from 'leva'
-import { Perf } from 'r3f-perf'
-import { Tablet } from "./Tablet";
+import { useControls, button } from 'leva';
+import { Perf } from 'r3f-perf';
+
 
 export default function Experience(props)
 {
@@ -69,10 +69,11 @@ export default function Experience(props)
         perfVisible: false
     })
 
+
     return <>
       { perfVisible && <Perf position="top-left" /> }
         {/* <directionalLight position={[2,2,-5]} intensity={2} castShadow /> */}
-        <ambientLight castShadow intensity={3} />
+        <ambientLight intensity={3} />
         <motion.group position={[0,1,1]} scale={[1,1,1]} rotation-y={-Math.PI / 4} animate={{ y: section === 0 ? 0 : 1 }}>
             <Galaxy/>
         </motion.group>
@@ -129,12 +130,11 @@ export default function Experience(props)
             >
                     <Astronaut animationIndex={characterAnimation} section={section} />
             </motion.group>
-            <Float rotationIntensity={.4}>
+            {/* <Float rotationIntensity={.4}> */}
             <PlanetOne />
             <PlanetTwo />
             <PlanetThree />
-            </Float>
-            <Tablet />
+            {/* </Float> */}
             <PlanetFour />
         </Suspense>
         

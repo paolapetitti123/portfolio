@@ -13,13 +13,13 @@ export const PlanetThree = () => {
     })
 
     const eventHandler = () => {
-        console.log("planet clicked");
+        console.log("planet three clicked");
     }
 
 
     return (<>
 
-      <group ref={planetRotation} position={[6,-16,-2]} rotation-x={.2} onClick={eventHandler}>
+      <group ref={planetRotation} position={[6,-15,-5]} rotation-x={.2} onClick={eventHandler}>
             <primitive object={planet1.scene} />
       
     </group>

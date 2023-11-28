@@ -1,6 +1,5 @@
 import { Canvas } from '@react-three/fiber'
 import Experience from './Experience.jsx'
-import * as THREE from 'three'
 import { Scroll, ScrollControls } from '@react-three/drei'
 import { Interface } from './Interface.jsx'
 import { useEffect, useState } from 'react'

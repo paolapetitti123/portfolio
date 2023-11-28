@@ -11,9 +11,15 @@ export const PlanetTwo = () => {
         planetRotation.current.rotation.y += delta * 0.4
         planetRotation.current.rotation.z += delta * 0.0004
     })
+
+    const eventHandler = () => {
+        console.log("planet Two clicked");
+    }
+
+
     return (<>
 
-      <group ref={planetRotation} position={[-2,-8,-3]} rotation-x={.2}>
+      <group ref={planetRotation} position={[-3,-15,-4]} rotation-x={.2} onClick={eventHandler}>
             <primitive object={planet1.scene}  />
       
     </group>

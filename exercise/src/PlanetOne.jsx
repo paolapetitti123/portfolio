@@ -12,9 +12,14 @@ export const PlanetOne = () => {
         planetRotation.current.rotation.z += delta * 0.0004
 
     })
+
+    const eventHandler = () => {
+        console.log("planet One clicked");
+    }
+
     return (<>
 
-      <group ref={planetRotation} position={[5,0,-1]}>
+      <group ref={planetRotation} position={[.5,-16,0]} onClick={eventHandler}>
             <primitive object={planet1.scene}  />
       
     </group>
@@ -24,3 +29,5 @@ export const PlanetOne = () => {
     )
 }
 useGLTF.preload('../public/planet-2.gltf')
+
+
