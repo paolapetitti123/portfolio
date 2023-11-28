@@ -28,4 +28,4 @@ export const PlanetTwo = () => {
     </>
     )
 }
-useGLTF.preload('../public/planet-3.gltf')
+useGLTF.preload('./planet-3.gltf')
