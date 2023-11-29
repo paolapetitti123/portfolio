@@ -29,4 +29,4 @@ export default function Astronaut(props)
      
 }
 
-useGLTF.preload('../public/astronaut.gltf')
+useGLTF.preload('./astronaut.gltf')

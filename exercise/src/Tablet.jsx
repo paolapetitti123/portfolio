@@ -15,7 +15,7 @@ export const Tablet = () => {
                 snap
                 >
                 <Float rotationIntensity={.04}>
-                    <primitive object={tablet.scene} position={[0,-15,1.5]} rotation-z={.02}>
+                    <primitive object={tablet.scene} position={[0,-15,2]} rotation-z={.02}>
                     
                     </primitive>
                     </Float>

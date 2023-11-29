@@ -1,8 +1,8 @@
-import { useFrame } from '@react-three/fiber';
+import { useFrame, useThree } from '@react-three/fiber';
 import { useRef } from 'react'
 import { useGLTF } from "@react-three/drei";
 
-export const PlanetOne = () => {
+export const PlanetOne = ({position, onClick }) => {
     const planet1 = useGLTF('./planet-2.gltf')
     
     const planetRotation = useRef();
@@ -13,15 +13,12 @@ export const PlanetOne = () => {
 
     })
 
-    const eventHandler = () => {
-        console.log("planet One clicked");
-    }
+
 
     return (<>
 
-      <group ref={planetRotation} position={[.5,-16,0]} onClick={eventHandler}>
+      <group ref={planetRotation} position={position} onClick={onClick}>
             <primitive object={planet1.scene}  />
-      
     </group>
             
             
